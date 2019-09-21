@@ -1,0 +1,41 @@
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 50rem;
+}
+
+.header {
+  font-size: 1.4rem;
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-light-2);
+
+  display: flex;
+  justify-content: space-between;
+
+  //center all item vertically
+  align-items: center;
+}
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+
+  //1 pram = flex grow (we dont want to grow if they are more space)
+  // 2 = flex shrink (we dont want to shrink if not enought space)
+  // 3 = flex bases
+  flex: 0 0 18%;
+}
+
+.hotel-view {
+  background-color: orangered;
+
+  //flex 1 said element will grow as much as he can
+  flex: 1;
+}
