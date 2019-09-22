@@ -283,7 +283,7 @@
   border: none;
   color: var(--color-primary);
   font-size: inherit;
-  border-bottom: 1px solid currentColor;
+  border-bottom: var(--line);
   padding-bottom: 2px;
   display: inline-block;
   background-color: transparent;
@@ -315,5 +315,80 @@
   100% {
     transform: scale(1);
     box-shadow: none;
+  }
+}
+
+////////////////////////////////////////
+//PARAGRAPH
+//not last child because container got multiple child
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+
+////////////////////////////////////////
+//LIST
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem;
+  border-top: var(--line);
+  border-bottom: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: .7rem;
+  }
+
+  //before each item we create a sudo element
+  &__item::before {
+    content: "";
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    margin-right: .7rem;
+
+    //older browsers
+  /* background-image: url("../img/chevron-thin-right.svg");
+    background-size: cover;*/
+
+    //newer browsers - masks
+    //mask set the background color only were the icon is
+    background-color: var(--color-primary);
+    -webkit-mask-image: url("../img/chevron-thin-right.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+  }
+}
+
+////////////////////////////////////////
+//RECOMMEND
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center;
+
+  &__count {
+    margin-right: auto;
+  }
+
+  &__firends {
+
+  }
+
+  &__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
   }
 }
